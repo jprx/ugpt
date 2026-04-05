@@ -33,7 +33,10 @@ void log_vector(std::span<Value*> x) {
 vector<string> get_data(string path) {
   vector<string> dat;
   std::ifstream f(path);
-  if (!f.is_open()) return dat;
+  if (!f.is_open()) {
+    std::cerr << "Error: " << path << " not found\n";
+    exit(1);
+  }
 
   string line;
   while (getline(f, line)) {

@@ -1,6 +1,6 @@
 
 ugpt: ugpt.cc Makefile
-	g++ -std=c++20 $(shell pkgconf --cflags eigen3) -ggdb ugpt.cc -o ugpt
+	g++ -std=c++20 -O2 ugpt.cc -o ugpt
 
 get-data:
 	wget https://raw.githubusercontent.com/karpathy/makemore/refs/heads/master/names.txt
